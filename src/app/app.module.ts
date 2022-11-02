@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { NuevohackComponent } from './nuevohack/nuevohack.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     SidebarComponent,
     ArregloHacksComponent,
-    AppRoutingComponent
+    AppRoutingComponent,
+    NuevohackComponent
   ],
   imports: [
     BrowserModule,
