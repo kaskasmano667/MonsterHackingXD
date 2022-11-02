@@ -16,12 +16,12 @@ export class AppComponent {
     nombre: '',
     base: '',
     descripcion: '',
-    calificacion: ''
+    Imagen: ''
   }
 
   constructor(private hackService:HackService) { }
 
-  get paisLocal():hack[]{
+  get hackLocal():hack[]{
     return this.hackService.hackLocal;
   }
 
@@ -31,7 +31,7 @@ export class AppComponent {
       nombre: '',
       base: '',
       descripcion: '',
-      calificacion: ''
+      Imagen: ''
     }
   }
 }

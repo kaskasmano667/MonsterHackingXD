@@ -22,12 +22,13 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    RouterModule
   ],
   exports:[
     CommonModule,
-    FormsModule,
-    RouterModule
+    
   ]
   ,
   providers: [],

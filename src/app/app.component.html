@@ -4,146 +4,78 @@
     
 
     <br><br>
-    <div class="row">
-      <form (ngSubmit)="agregar()">
-   
-          <div class="mb-3">
-              <label for="nombre" class="form-label">Nombre del Pais:</label>
-              <input 
-          class="input form-control"
-          type="text"
-           placeholder="Nombre" 
-           name="nombre" 
-           [(ngModel)]="nuevoHack.nombre">
-          <!-- [value]="nuevo.nombre"
-          (input)="cambiarNombre( $event )" -->
-            </div>
-   
+    <div class="container">
+      <div class="row">
+        <form (ngSubmit)="agregar()">
+     
             <div class="mb-3">
-              <label for="capital" class="form-label">Capital:</label>
-              <input 
-              class="input form-control"
-              type="text"
-              placeholder="Capital" 
-              name="capital" 
-              [(ngModel)]="nuevoPais.data.capital">
-          
-            </div>
-          
-            <div class="mb-3">
-              <label for="nombre" class="form-label">Url bandera:</label>
-              <input 
-              class="input form-control"
-              type="text"
-              placeholder="Capital" 
-              name="bandera" 
-              [(ngModel)]="nuevoPais.bandera">
-          
-            </div>
+                <label for="nombre" class="form-label">Nombre del Hack:</label>
+                <input 
+            class="input form-control"
+            type="text"
+             placeholder="Nombre" 
+             name="nombre" 
+             [(ngModel)]="nuevoHack.nombre">
+            <!-- [value]="nuevo.nombre"
+            (input)="cambiarNombre( $event )" -->
+              </div>
+     
+              <div class="mb-3">
+                <label for="base" class="form-label">Base:</label>
+                <input 
+                class="input form-control"
+                type="text"
+                placeholder="Base" 
+                name="base" 
+                [(ngModel)]="nuevoHack.base">
+            
+              </div>
+            
+              <div class="mb-3">
+                <label for="descripcion" class="form-label">descripcion:</label>
+                <input 
+                class="input form-control"
+                type="text"
+                placeholder="Descripcion" 
+                name="descripcion" 
+                [(ngModel)]="nuevoHack.descripcion">
+            
+              </div>
+  
+              <div class="mb-3">
+                <label for="Imagen" class="form-label">URL imagen:</label>
+                <input 
+                class="input form-control"
+                type="text"
+                placeholder="Imagen" 
+                name="Imagen" 
+                [(ngModel)]="nuevoHack.Imagen">
+            
+              </div>
+     
+            <button class="btn btn-primary" type="submit">Agregar</button>
+        
+        </form>
+    </div>
+    </div>
    
-          <button class="btn btn-primary" type="submit">Agregar</button>
-      
-      </form>
-  </div>
    
   <hr>
    
-  <div class="row">
-      <div class="col">
-          <!-- <table *ngIf="!hayError" class="table table-hover"> -->
-          <table  class="table table-hover">
-              <thead>
-                  <tr>
-                      <th>#</th>
-                      <th>Bandera</th>
-                      <th>Nombre</th>
-                      <th>Capital</th>
-                      <th></th>
-                  </tr>
-              </thead>
-              <tbody *ngFor="let pais of paisLocal ; let i = index">
-                  <td> {{ i+1 }}</td>
-                  <td>
-                      <img [src]="pais.bandera" alt="" 
-                      class="small-flag">
-                  </td>
-                  <td> {{ pais.data.nombre }} </td>
-                  <td>{{ pais.data.capital }}</td>
-                  <td>
-                      <!-- <a href="/pais/mex">ver..</a> -->
-                      
-                  </td>
-              </tbody>
-          </table>
-      </div>
-  </div>
+  
 
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col-4" *ngFor="let hack of hackLocal ; let i = index">
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Pokémon Iberia</h5>
-          <p class="card-text">Un juego inspirado en españa, este hack tiene un montón de contenido</p>
+        <img class="card-img-top imagenURL" [src]="hack.Imagen" alt="Card image cap">
+        <div class="card-body" >
+          <h5 class="card-title">{{hack.nombre}}</h5>
+          <p class="card-text">{{hack.base}}</p>
+          <p class="card-text">{{hack.descripcion}}</p>
+          
           <a href="#" class="btn btn-primary">VER HACK!</a>
         </div>
       </div>
     </div>
-    <div class="col">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Pokémon Prism</h5>
-          <p class="card-text">Este Hack que está encima de pokemon crystal, tiene una historia enganchante y llena de detalles y mecanicas impresionantes</p>
-          <a href="#" class="btn btn-primary">VER HACK!</a>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Pokémon lol</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">VER HACK!</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> 
-<br><br>
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="imagenes\pokemon-clover-cover.png" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Pokémon Clover</h5>
-          <p class="card-text">Este juego toma lugar en la región de fochun, creado por la gente enferma de 4chan está completamente lleno de su húmor de mierda y un dificultad injusta</p>
-          <a href="#" class="btn btn-primary">VER HACK!</a>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Pokémon </h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">VER HACK!</a>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">VER HACK!</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+    
